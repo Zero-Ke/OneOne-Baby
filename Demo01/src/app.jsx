@@ -23,6 +23,13 @@ export default class App extends React.Component {
                             this.setState({ flag: !flag })
                         }
                     }>{flag ? 'Hide' : "Show"}</button>
+                    {
+                        flag == true? 
+                        <div>
+                            显示
+                        </div>:
+                        <div>隐藏</div>
+                    }
                 </div>
                 <div><StateComponent flag={flag}></StateComponent></div>
             </div>
