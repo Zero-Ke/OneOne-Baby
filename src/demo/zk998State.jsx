@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default class ZkStateTest extends React.Component {
+export default class Zk998StateTest extends React.Component {
     constructor(props) {
         super(props);
         this.state = {

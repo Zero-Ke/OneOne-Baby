@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default class ZkNav extends React.Component {
+export default class Zk999Nav extends React.Component {
     render() {
         console.log(this.props)
         return (

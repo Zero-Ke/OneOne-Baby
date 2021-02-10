@@ -1,7 +1,10 @@
 import React from 'react'
-import ZkNav from './zk001Nav';
-import ZkStateTest from './zk002State'
-import ZkCompose from './zk003Compose'
+
+import Zk996Compose from './zk996Compose'
+import Zk997PropDemo from './zk997PropDemo'
+import Zk998StateTest from './zk998State'
+import Zk999Nav from './zk999Nav';
+
 export default class ZkApp extends React.Component {
     constructor(props) {
         super(props);
@@ -12,34 +15,50 @@ export default class ZkApp extends React.Component {
     render() {
         return (
             <div>
-                {this.render003Compose()}
-                {/* {this.render002State()} */}
-                {/* {this.render001Nav()} */}
+                { this.render996Prop()}
+                {/* {this.render997Compose()} */}
+                {/* {this.render998State()} */}
+                {/* {this.render999Nav()} */}
             </div>
         )
     }
-    //#region 003 组合与继承：input输入框
-    render003Compose() {
+
+    //#region 996 props属性
+    render996Prop() {
+        return <Zk997PropDemo title="Title"></Zk997PropDemo>
+    }
+    //#endregion
+
+    //#region 997 组合与继承：input输入框
+    render997Compose() {
         return (
             <div>
-                <ZkCompose>
+                <Zk996Compose>
                     <div>Name:</div>
-                </ZkCompose>
+                </Zk996Compose>
             </div>
         )
     }
     //#endregion
 
-    //#region 001导航功能
-    render001Nav() {
+    //#region 998同步与异步:递增
+    render998State() {
+        return (
+            <div><Zk998StateTest flag={this.state.flag}></Zk998StateTest></div>
+        )
+    }
+    //#endregion
+
+    //#region 999导航功能
+    render999Nav() {
         const navlist = ["段落1", '段落2', '段落3']
         const navlist2 = ['段落4', '段落5', '段落6']
         const { flag } = this.state
         return (
             <div>
                 <h1>Hello React Component</h1>
-                <ZkNav nav={navlist} title="Page1"></ZkNav>
-                <ZkNav nav={navlist2} title="Page2"></ZkNav>
+                <Zk999Nav nav={navlist} title="Page1"></Zk999Nav>
+                <Zk999Nav nav={navlist2} title="Page2"></Zk999Nav>
                 <div><h1>State Change</h1>
                     <button onClick={
                         () => {
@@ -50,19 +69,11 @@ export default class ZkApp extends React.Component {
                         flag == true ?
                             <div>
                                 显示
-                        </div> :
+                            </div> :
                             <div>隐藏</div>
                     }
                 </div>
             </div>)
-    }
-    //#endregion
-
-    //#region 002同步与异步:递增
-    render002State() {
-        return (
-            <div><ZkStateTest flag={this.state.flag}></ZkStateTest></div>
-        )
     }
     //#endregion
 }

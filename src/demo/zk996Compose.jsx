@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default class ZkCompose extends React.Component {
+export default class Zk996Compose extends React.Component {
 
     constructor(props) {
         super(props)
