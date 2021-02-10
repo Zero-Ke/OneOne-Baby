@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './app'
+import 'antd/dist/antd.css'
 // const content = "Hello World";
 // function tick() {
 //   const element = (
