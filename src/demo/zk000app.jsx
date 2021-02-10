@@ -1,6 +1,7 @@
 import React from 'react'
 import ZkNav from './zk001Nav';
 import ZkStateTest from './zk002State'
+import ZkCompose from './zk003Compose'
 export default class ZkApp extends React.Component {
     constructor(props) {
         super(props);
@@ -11,12 +12,24 @@ export default class ZkApp extends React.Component {
     render() {
         return (
             <div>
-                {this.render002State()}
+                {this.render003Compose()}
+                {/* {this.render002State()} */}
                 {/* {this.render001Nav()} */}
             </div>
         )
     }
-    
+    //#region 003 组合与继承：input输入框
+    render003Compose() {
+        return (
+            <div>
+                <ZkCompose>
+                    <div>Name:</div>
+                </ZkCompose>
+            </div>
+        )
+    }
+    //#endregion
+
     //#region 001导航功能
     render001Nav() {
         const navlist = ["段落1", '段落2', '段落3']
@@ -48,7 +61,8 @@ export default class ZkApp extends React.Component {
     //#region 002同步与异步:递增
     render002State() {
         return (
-            <div><ZkStateTest flag={this.state.flag}></ZkStateTest></div>)
+            <div><ZkStateTest flag={this.state.flag}></ZkStateTest></div>
+        )
     }
     //#endregion
 }
