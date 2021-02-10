@@ -1,6 +1,6 @@
 import React from 'react'
-import Nav from './nav';
-import StateComponent from './statecomponent'
+import ZkNav from './demo/zk001Nav';
+import ZkStateTest from './demo/zk002State'
 export default class App extends React.Component {
     constructor(props) {
         super(props);
@@ -15,8 +15,8 @@ export default class App extends React.Component {
         return (
             <div>
                 <h1>Hello React Component</h1>
-                <Nav nav={navlist} title="Page1"></Nav>
-                <Nav nav={navlist2} title="Page2"></Nav>
+                <ZkNav nav={navlist} title="Page1"></ZkNav>
+                <ZkNav nav={navlist2} title="Page2"></ZkNav>
                 <div><h1>State Change</h1>
                     <button onClick={
                         () => {
@@ -31,7 +31,7 @@ export default class App extends React.Component {
                         <div>隐藏</div>
                     }
                 </div>
-                <div><StateComponent flag={flag}></StateComponent></div>
+                <div><ZkStateTest flag={flag}></ZkStateTest></div>
             </div>
         )
     }
